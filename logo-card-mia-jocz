@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <div class="button">
+    <button class="duplicator">Duplication Button</button>
+    <button class="changeColorBtn"> Background Color</button>
+    <button class="change-heading">Change Heading</button>
+    <button class="delete-card">Delete Card</button>
+    <button class="toggleDetails">Open Details</button>
+  </div>
+  <style>
+    html,
+    body {
+      margin: 10;
+      padding: 0;
+      background-color: white;
+    }
+
+    logo-card[accent-color="blue"] {
+      --logo-card-accent-color: black;
+    }
+
+    logo-card[accent-color="gray"] {
+      --logo-card-accent-color: gray;
+    }
+
+    logo-card[accent-color="white"] {
+      --logo-card-accent-color: white;
+    }
+
+    button {
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: grey;
+    }
+  </style>
+</head>
+
+<body>
+  <logo-card>
+    <li>The Washington Nationals are an American professional baseball team based in Washington, D.C. They compete in Major League Baseball as a member of the National League East division.</li>
+  </logo-card>
+
+  <script type="module" src='./src/logo-card.js'></script>
+  <script>
+    document.querySelector(".duplicator").addEventListener("click", function (e) {
+      const card = document.querySelector("logo-card");
+      const clone = card.cloneNode(true);
+      card.parentNode.appendChild(clone);
+    });
+
+    document.querySelector(".change-heading").addEventListener("click", function (e) {
+      const logoCard = document.querySelector("logo-card");
+      const h1Element = logoCard.shadowRoot.querySelector("h1");
+
+      if (h1Element.textContent === "Something Else") {
+        h1Element.textContent = "The Nationals Logo";
+      } else {
+        h1Element.textContent = "Something Else";
+      }
+    });
+
+    document.body.addEventListener('opened-changed', (e) => {
+      document.querySelector(".toggleDetails").innerText = e.detail.value ? 'Hide Details' : 'Show Details';
+      console.log('opened-changed', e.detail, e.target)
+    });
+
+    document.querySelector(".delete-card").addEventListener("click", function (e) {
+      document.querySelector("logo-card:last-child").remove();
+    });
+
+    document.querySelector(".changeColorBtn").addEventListener("click", function (e) {
+      var colors = ["blue", "gray", "white"];
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      var logoCard = document.querySelector("logo-card");
+      logoCard.setAttribute("accent-color", randomColor);
+    });
+
+    //for some reason this throws an error only after making use of the change heading button. Refresh the page, and this button works perfectly.
+    document.querySelector(".toggleDetails").addEventListener("click", function (e) {
+      var details = document.querySelector("logo-card");
+      details.opened = !details.opened;
+    })
+
+  </script>
+</body>
+
+</html>

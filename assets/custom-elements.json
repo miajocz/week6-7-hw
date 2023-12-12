@@ -1,0 +1,100 @@
+{
+    "schemaVersion": "1.0.0",
+    "readme": "",
+    "modules": [
+      {
+        "kind": "javascript-module",
+        "path": "src/logo-card.js",
+        "declarations": [
+          {
+            "kind": "class",
+            "description": "",
+            "name": "LogoCard",
+            "members": [
+              {
+                "kind": "method",
+                "name": "toggleEvent",
+                "parameters": [
+                  {
+                    "name": "e"
+                  }
+                ]
+              },
+              {
+                "kind": "field",
+                "name": "header",
+                "type": {
+                  "text": "string"
+                },
+                "default": "'My app'",
+                "privacy": "public",
+                "attribute": "header"
+              },
+              {
+                "kind": "field",
+                "name": "title",
+                "type": {
+                  "text": "string"
+                },
+                "privacy": "public",
+                "attribute": "title"
+              },
+              {
+                "kind": "field",
+                "name": "opened",
+                "type": {
+                  "text": "boolean"
+                },
+                "default": "false",
+                "privacy": "public",
+                "attribute": "opened",
+                "reflects": true
+              }
+            ],
+            "events": [
+              {
+                "name": "opened-changed",
+                "type": {
+                  "text": "CustomEvent"
+                }
+              }
+            ],
+            "attributes": [
+              {
+                "name": "header",
+                "fieldName": "header"
+              },
+              {
+                "name": "title",
+                "fieldName": "title"
+              },
+              {
+                "name": "accent-color",
+                "fieldName": "accentColor"
+              },
+              {
+                "name": "opened",
+                "fieldName": "opened"
+              }
+            ],
+            "superclass": {
+              "name": "LitElement",
+              "package": "lit"
+            },
+            "tagName": "logo-card",
+            "customElement": true
+          }
+        ],
+        "exports": [
+          {
+            "kind": "custom-element-definition",
+            "name": "logo-card",
+            "declaration": {
+              "name": "LogoCard",
+              "module": "src/logo-card.js"
+            }
+          }
+        ]
+      }
+    ]
+  }
