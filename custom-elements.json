@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/logo-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LogoCard",
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggleEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "image",
+              "type": {
+                "text": "string"
+              },
+              "default": "'https://logos-world.net/wp-content/uploads/2020/05/Washington-Nationals-Emblem.png'",
+              "privacy": "public",
+              "attribute": "image"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "'The Washington Nationals Logo'",
+              "privacy": "public",
+              "attribute": "title",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "subtitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Description'",
+              "privacy": "public",
+              "attribute": "subtitle"
+            },
+            {
+              "kind": "field",
+              "name": "opened",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "opened",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "topText",
+              "privacy": "public",
+              "attribute": "topText"
+            },
+            {
+              "kind": "field",
+              "name": "bottomText",
+              "privacy": "public",
+              "attribute": "bottomText"
+            },
+            {
+              "kind": "field",
+              "name": "accentColor",
+              "privacy": "public",
+              "attribute": "accent-color",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "opened-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "image",
+              "fieldName": "image"
+            },
+            {
+              "name": "topText",
+              "fieldName": "topText"
+            },
+            {
+              "name": "bottomText",
+              "fieldName": "bottomText"
+            },
+            {
+              "name": "accent-color",
+              "fieldName": "accentColor"
+            },
+            {
+              "name": "title",
+              "fieldName": "title"
+            },
+            {
+              "name": "subtitle",
+              "fieldName": "subtitle"
+            },
+            {
+              "name": "opened",
+              "fieldName": "opened"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "logo-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LogoCard",
+          "declaration": {
+            "name": "LogoCard",
+            "module": "src/logo-card.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "logo-card",
+          "declaration": {
+            "name": "LogoCard",
+            "module": "src/logo-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/logo-card.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "App"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/logo-card.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "App",
+          "declaration": {
+            "name": "App",
+            "module": "stories/logo-card.stories.js"
+          }
+        }
+      ]
+    }
+  ]
+}

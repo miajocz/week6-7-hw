@@ -76,7 +76,7 @@
     });
 
     document.body.addEventListener('opened-changed', (e) => {
-      document.querySelector(".toggleDetails").innerText = e.detail.value ? 'Hide Details' : 'Show Details';
+      document.querySelector(".toggleDetails").innerText = e.detail.value ? 'Hide Details' : 'Show Description';
       console.log('opened-changed', e.detail, e.target)
     });
 
